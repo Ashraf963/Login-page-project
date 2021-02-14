@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Form Validation with sample registration</title>
+<h2>passport application form</h2>
+<marquee><h1>  Welcome to passport seva kendra</h1></marquee>
+
+<meta name="keywords" content="example, JS Form Validation, Sample registration form" />
+<meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+<style>
+h1{
+background-color:silver;
+
+color:black;
+	width:490px;
+  border: 5px solid black;
+  padding: 5px;	
+
+}
+h2
+{
+	background-color: lime;
+	color:black;
+	width: 300px;
+  border: 10px solid blue;
+  padding: 20px;
+ 
+}
+body
+{
+	
+
+	background-color:yellow;
+	
+
+}
+
+</style>
+<script >
+function allLetter(uname)
+{ 
+var letters = /^[A-Za-z]+$/;
+if(uname.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('Username must have alphabet characters only');
+uname.focus();
+return false;
+}
+}
+
+/*function dob(bday)
+{
+	var dat=bday.getFullYear();
+	if(dat==2021)
+	alert(dat);
+	// calculate age comparing current date and birthday
+	var myAge = 2020-dat;
+	alert(myage);
+	if(myAge < 18) 
+	{
+			alert("age less than 18");
+     	    return false;
+    }
+	else
+	{
+	   return true;
+	}
+
+} */
+
+function aid_validation(aid)
+{
+var aid_len = aid.value.length;
+if (aid_len !=12)
+{
+alert("aadhar number should not be empty & length=12");
+aid.focus();
+return false;
+}
+return true;
+}
+
+function phoneid_validation(phoneid)
+{
+var phoneid_len = phoneid.value.length;
+if (phoneid_len != 10)
+{
+alert("Phonenumber should not be empty / length=10");
+phoneid.focus();
+return false;
+}
+return true;
+}
+
+function alphanumeric(uadd)
+{ 
+var letters = /^[0-9a-zA-Z]+$/;
+if(uadd.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('User address must have alphanumeric characters only');
+uadd.focus();
+return false;
+}
+}
+
+function countryselect(ucountry)
+{
+if(ucountry.value == "Default")
+{
+alert('Select your country from the list');
+ucountry.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+
+function allnumeric(uzip)
+{ 
+var numbers = /^[0-9]+$/;
+if(uzip.value.match(numbers))
+{
+return true;
+}
+else
+{
+alert('ZIP code must have numeric characters only');
+uzip.focus();
+return false;
+}
+}
+
+function ValidateEmail(uemail)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(uemail.value.match(mailformat))
+{
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+uemail.focus();
+return false;
+}
+}
+
+function validsex(umsex,ufsex)
+{
+x=0;
+
+if(umsex.checked) 
+{
+x++;
+} if(ufsex.checked)
+{
+x++; 
+}
+if(x==0)
+{
+alert('Select Male/Female');
+umsex.focus();
+return false;
+}
+else
+{
+alert('Form Successfully Submitted');
+window.location.reload()
+return true;}
+}
+
+
+function formValidation()
+{
+var uname = document.registration.username;
+//var bday = document.registration.birthday;
+var aid = document.registration.aadhar;
+var phoneid = document.registration.phone;
+var uadd = document.registration.address;
+var ucountry = document.registration.country;
+var uzip = document.registration.zip;
+var uemail = document.registration.email;
+var umsex = document.registration.msex;
+var ufsex = document.registration.fsex; 
+
+if(allLetter(uname))
+{
+//if(dob(bday))
+//{
+if(aid_validation(aid))
+{
+if(phoneid_validation(phoneid))
+{
+if(alphanumeric(uadd))
+{ 
+if(countryselect(ucountry))
+{
+if(allnumeric(uzip))
+{
+if(ValidateEmail(uemail))
+{
+if(validsex(umsex,ufsex))
+{
+	alert("validated")
+}
+} 
+}
+}
+} 
+}
+}
+//}
+}
+return false;
+}
+</script>
+
+</head>
+
+<body onload="document.registration.username.focus();">
+
+  <img src="p.jpg" alt="Cinque Terre" width="200" height="300">
+
+<br>
+
+<form name='registration' onSubmit="return formValidation();">
+Username:
+<input type="text" name="username" size="50" /><br><br>
+Date of birth:
+ <input type="date"  name="birthday"><br><br>
+Aadhar Number:
+<input type="text" name="aadhar" size="16" /><br><br>
+Phone Number:
+<input type="text" name="phone" size="16" /><br><br>
+Address:
+<input type="text" name="address" size="50" /><br><br>
+Select country:
+<select name="country">
+<option selected="" value="Default">(Please select a country)</option>
+<option value="AF">Australia</option>
+<option value="AL">Canada</option>
+<option value="DZ">India</option>
+<option value="AS">Russia</option>
+<option value="AD">USA</option>
+</select><br><br>
+Zipcode:
+<input type="text" name="zip" /><br><br>
+Email:
+<input type="text" name="email" size="50" /><br><br>
+Gender:
+<input type="radio" name="msex" value="Male" /><span>Male</span>
+<input type="radio" name="fsex" value="Female" /><span>Female</span><br><br>
+Language:
+<input type="checkbox" name="en" value="en" checked /><span>English</span>
+<input type="checkbox" name="nonen" value="noen" /><span>Non English</span> <br><br>
+
+<input type="submit" name="submit" value="Submit" /> <input type="reset" name="reset" value="reset" /> 
+ 
+</form>
+</body>
+</html>
