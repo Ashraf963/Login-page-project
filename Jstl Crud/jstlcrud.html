@@ -1,0 +1,60 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Crud Application</title>
+</head>
+<body>
+<sql:setDataSource var="me" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://localhost:3306/weddb" user="root" password="root"/>
+<sql:update dataSource="${me}" var="a">  
+insert into  bookdata values('12',420,'flower','ashraf','hussain@publications');  
+</sql:update> 
+<sql:update dataSource="${me}" var="a1">  
+delete from bookdata where bid=?
+<sql:param value="1"/>
+</sql:update>  
+<sql:update dataSource="${me}" var="a2">  
+update bookdata set bname=? where sid=?
+<sql:param value="ship"/>
+<sql:param value="moyin"/>
+</sql:update>    
+<sql:query dataSource="${me}" var="hus">
+select * from bookdata;
+</sql:query>
+<c:forEach var="ash" items="${hus.rows}">
+Sid: <c:out value="${ash.sid}"></c:out><br>
+Bookid: <c:out value="${ash.bid}"></c:out><br>
+BookName <c:out value="${ash.bname}"></c:out><br>
+AuthorName <c:out value="${ash.aname}"></c:out><br>
+PublisherName <c:out value="${ash.pname}"></c:out><br>
+</c:forEach>
+<sql:transaction dataSource="${me}">
+<sql:update var="a">  
+insert into  bookdata values('786',456,'ship', 'moyin', 'flower');  
+</sql:update> 
+<sql:update var="a1">  
+delete from bookdata where bid=?
+<sql:param value="786"/>
+</sql:update>  
+<sql:update var="a2">  
+update bookdata set bname=? where sid=?
+<sql:param value="flower"/>
+<sql:param value="12"/>
+</sql:update>  
+<sql:query var="hus">
+select * from bookdata;
+</sql:query>
+<c:forEach var="ash" items="${hus.rows}">
+sid: <c:out value="${ash.sid}"></c:out><br>
+Book-id: <c:out value="${ash.bid}"></c:out><br>
+Book-Name <c:out value="${ash.bname}"></c:out><br>
+Author-Name <c:out value="${ash.aname}"></c:out><br>
+Publisher-Name <c:out value="${ash.pname}"></c:out><br>
+</c:forEach>
+</sql:transaction>
+</body>
+</html>
+
