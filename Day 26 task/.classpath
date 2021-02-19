@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Program Files/springs/commons-logging-1.2-bin/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/springs/spring-5.3.4-dist/spring-framework-5.3.4/libs/spring-aop-5.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/springs/spring-5.3.4-dist/spring-framework-5.3.4/libs/spring-beans-5.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/springs/spring-5.3.4-dist/spring-framework-5.3.4/libs/spring-context-5.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/springs/spring-5.3.4-dist/spring-framework-5.3.4/libs/spring-core-5.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/springs/spring-5.3.4-dist/spring-framework-5.3.4/libs/spring-expression-5.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/springs/spring-5.3.4-dist/spring-framework-5.3.4/libs/spring-web-5.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/springs/spring-5.3.4-dist/spring-framework-5.3.4/libs/spring-webmvc-5.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/springs/spring-5.3.4-dist/spring-framework-5.3.4/libs/spring-jdbc-5.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/springs/spring-5.3.4-dist/spring-framework-5.3.4/libs/spring-tx-5.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/MySQL/jar_files (2)/mysql-connector-java-8.0.19.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
